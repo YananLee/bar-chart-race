@@ -118,6 +118,7 @@ const CSS = `
   box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--bcr-text) 10%, transparent);
   font-size: clamp(7px, 1.25cqw, 13px);
 }
+.bcr-marker[hidden] { display: none !important; }
 .bcr-variant-flags .bcr-marker { background: transparent; box-shadow: none; font-size: clamp(9px, 1.65cqw, 18px); }
 .bcr-variant-medals .bcr-marker { background: #fff7df; }
 .bcr-variant-market .bcr-marker { color: var(--bcr-background); background: var(--bcr-tone); font-weight: 900; }

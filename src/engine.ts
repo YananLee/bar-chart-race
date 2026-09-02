@@ -100,6 +100,7 @@ class Engine {
   private timer = 0;
   private raf = 0;
   private readyTimer = 0;
+  private readyRaf = 0;
   private observer?: IntersectionObserver;
   private canvas!: HTMLElement;
   private race!: HTMLElement;
@@ -161,6 +162,8 @@ class Engine {
 
   destroy() {
     this.pause();
+    window.clearTimeout(this.readyTimer);
+    window.cancelAnimationFrame(this.readyRaf);
     this.observer?.disconnect();
     this.numberRaf.forEach((id) => window.cancelAnimationFrame(id));
     this.numberRaf.clear();
@@ -176,6 +179,7 @@ class Engine {
     ensureStyles();
     this.clearTimer();
     window.clearTimeout(this.readyTimer);
+    window.cancelAnimationFrame(this.readyRaf);
     this.observer?.disconnect();
     this.numberRaf.forEach((id) => window.cancelAnimationFrame(id));
     this.numberRaf.clear();
@@ -389,8 +393,10 @@ class Engine {
 
   private armReady() {
     this.race.classList.remove("is-ready");
+    window.clearTimeout(this.readyTimer);
+    window.cancelAnimationFrame(this.readyRaf);
     this.readyTimer = window.setTimeout(() => {
-      this.raf = window.requestAnimationFrame(() => this.race.classList.add("is-ready"));
+      this.readyRaf = window.requestAnimationFrame(() => this.race.classList.add("is-ready"));
     }, this.options.startDelay * 1_000);
   }
 

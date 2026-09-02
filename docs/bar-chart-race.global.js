@@ -287,6 +287,7 @@ Lumen,47,53,59,71`;
   box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--bcr-text) 10%, transparent);
   font-size: clamp(7px, 1.25cqw, 13px);
 }
+.bcr-marker[hidden] { display: none !important; }
 .bcr-variant-flags .bcr-marker { background: transparent; box-shadow: none; font-size: clamp(9px, 1.65cqw, 18px); }
 .bcr-variant-medals .bcr-marker { background: #fff7df; }
 .bcr-variant-market .bcr-marker { color: var(--bcr-background); background: var(--bcr-tone); font-weight: 900; }
@@ -409,6 +410,7 @@ Lumen,47,53,59,71`;
       this.timer = 0;
       this.raf = 0;
       this.readyTimer = 0;
+      this.readyRaf = 0;
       this.rows = [];
       this.numberRaf = /* @__PURE__ */ new Map();
       this.host = host;
@@ -454,6 +456,8 @@ Lumen,47,53,59,71`;
     }
     destroy() {
       this.pause();
+      window.clearTimeout(this.readyTimer);
+      window.cancelAnimationFrame(this.readyRaf);
       this.observer?.disconnect();
       this.numberRaf.forEach((id) => window.cancelAnimationFrame(id));
       this.numberRaf.clear();
@@ -467,6 +471,7 @@ Lumen,47,53,59,71`;
       ensureStyles();
       this.clearTimer();
       window.clearTimeout(this.readyTimer);
+      window.cancelAnimationFrame(this.readyRaf);
       this.observer?.disconnect();
       this.numberRaf.forEach((id) => window.cancelAnimationFrame(id));
       this.numberRaf.clear();
@@ -657,8 +662,10 @@ Lumen,47,53,59,71`;
     }
     armReady() {
       this.race.classList.remove("is-ready");
+      window.clearTimeout(this.readyTimer);
+      window.cancelAnimationFrame(this.readyRaf);
       this.readyTimer = window.setTimeout(() => {
-        this.raf = window.requestAnimationFrame(() => this.race.classList.add("is-ready"));
+        this.readyRaf = window.requestAnimationFrame(() => this.race.classList.add("is-ready"));
       }, this.options.startDelay * 1e3);
     }
     schedule() {
