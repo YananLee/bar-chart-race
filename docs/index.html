@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bar Chart Race — animated ranking charts / 动态条形图</title>
+  <meta name="description" content="Open-source bar chart race JavaScript library. Create animated ranking charts in the browser. Full editor at LivelyChart.com." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div>
+      <p class="kicker">Open source bar chart race library</p>
+      <h1>Bar Chart Race</h1>
+      <p class="sub">Animated ranking charts for the web / 动态条形图 JS 开源库</p>
+    </div>
+    <nav>
+      <a href="https://livelychart.com">LivelyChart</a>
+      <a href="https://livelychart.com/charts/bar-race">Bar race editor</a>
+      <a href="https://github.com/YananLee/bar-chart-race">GitHub</a>
+    </nav>
+  </header>
+
+  <div class="stage-wrap">
+    <div id="chart"></div>
+  </div>
+
+  <div class="controls">
+    <label>CSV data
+      <textarea id="data" rows="7">Brand,2022,2023,2024,2025
+Nova,42,58,76,94
+Orbit,61,68,73,88
+Pixel,33,52,81,86
+Sage,54,64,70,79
+Vela,28,49,62,74
+Lumen,47,53,59,71</textarea>
+    </label>
+    <label>Title
+      <input id="title" type="text" value="Momentum, made visible" />
+    </label>
+    <label>Accent
+      <input id="accent" type="color" value="#635bff" />
+    </label>
+    <button id="replay" type="button">Replay</button>
+  </div>
+
+  <section class="catalog">
+    <h2>Variants / 样式</h2>
+    <div id="variants" class="presets"></div>
+  </section>
+
+  <footer>
+    Independent open-source engine. Full editor:
+    <a href="https://livelychart.com">https://livelychart.com</a>
+  </footer>
+
+  <script src="./bar-chart-race.global.js"></script>
+  <script src="./demo.js"></script>
+</body>
+</html>
