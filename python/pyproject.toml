@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "livelychart-svg"
+version = "0.1.0"
+description = "Generate lightweight SVG graphics for LivelyChart workflows"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [{name = "YananLee"}]
+classifiers = ["Programming Language :: Python :: 3", "Topic :: Multimedia :: Graphics"]
+
+[project.urls]
+Homepage = "https://livelychart.com/"
+Source = "https://github.com/YananLee/bar-chart-race/tree/main/python"
+
+[tool.setuptools]
+py-modules = ["livelychart_svg"]
