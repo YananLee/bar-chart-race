@@ -19,7 +19,7 @@ This repository is the open-source race engine. [LivelyChart](https://livelychar
 ## Install
 
 ```bash
-npm install bar-chart-race
+npm install livelychart-bar-race
 ```
 
 No runtime dependencies.
@@ -27,7 +27,7 @@ No runtime dependencies.
 ## Usage
 
 ```js
-import { mount } from "bar-chart-race";
+import { mount } from "livelychart-bar-race";
 
 mount("#chart", {
   data: `Brand,2022,2023,2024,2025
