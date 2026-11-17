@@ -108,3 +108,11 @@ Create a bar chart race from Excel or CSV: [livelychart.com/charts/bar-race](htt
 ## License
 
 MIT.
+
+## Additional SVG packages
+
+Small local SVG utilities are maintained in [`python/`](./python/), [`jsr/`](./jsr/), and [`rust/`](./rust/). They do not call the website's export or AI service.
+
+- JSR: [`@yananlee/livelychart-svg`](https://jsr.io/@yananlee/livelychart-svg)
+- Rust: [`livelychart-svg`](https://crates.io/crates/livelychart-svg)
+- Python: `livelychart-svg` source and built distributions are ready in `python/`; PyPI upload is pending an account publishing credential.
