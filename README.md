@@ -115,4 +115,4 @@ Small local SVG utilities are maintained in [`python/`](./python/), [`jsr/`](./j
 
 - JSR: [`@yananlee/livelychart-svg`](https://jsr.io/@yananlee/livelychart-svg)
 - Rust: [`livelychart-svg`](https://crates.io/crates/livelychart-svg)
-- Python: `livelychart-svg` source and built distributions are ready in `python/`; PyPI upload is pending an account publishing credential.
+- Python: [`livelychart-svg`](https://pypi.org/project/livelychart-svg/0.1.0/) is published; source is in [`python/`](./python/).
