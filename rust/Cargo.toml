@@ -1,0 +1,14 @@
+[package]
+name = "livelychart-svg"
+version = "0.1.0"
+edition = "2021"
+description = "Generate lightweight SVG graphics for LivelyChart workflows"
+license = "MIT"
+homepage = "https://livelychart.com/"
+repository = "https://github.com/YananLee/bar-chart-race"
+readme = "README.md"
+keywords = ["svg", "graphics", "animation"]
+categories = ["graphics", "visualization"]
+include = ["src/**", "Cargo.toml", "README.md", "LICENSE"]
+
+[dependencies]
